@@ -57,6 +57,10 @@ def login_page(request):
             #context['form'] = LoginForm()
             return redirect("/")
         else:
+            context = {
+                "form": form,
+                "error": "Not a valid usernamre or password.",
+            }
             print("Error")
 
     return render(request, "auth/login.html", context)
